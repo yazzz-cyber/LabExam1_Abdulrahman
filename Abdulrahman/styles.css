@@ -1,0 +1,348 @@
+/* ============================================
+   Global Styles & Reset
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a3a52 0%, #0d1f2d 30%, #162840 60%, #1a3a52 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ============================================
+   Container & Card Layout
+   ============================================ */
+.container {
+    width: 100%;
+    max-width: 700px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 45px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================
+   Header Section
+   ============================================ */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 25px;
+}
+
+.header h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   Input Section
+   ============================================ */
+.input-section {
+    margin-bottom: 35px;
+}
+
+.input-section h2 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.form-group select option {
+    background-color: #1a3a52;
+    color: white;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.hint {
+    display: block;
+    color: #999;
+    font-size: 12px;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* ============================================
+   Error Message
+   ============================================ */
+.error-message {
+    display: none;
+    background-color: rgba(255, 100, 100, 0.15);
+    border-left: 4px solid #ff9999;
+    color: #ffcccc;
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.error-message.show {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   Button Section
+   ============================================ */
+.button-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+    justify-content: center;
+}
+
+.btn {
+    flex: 1;
+    padding: 16px 24px;
+    border: 1.5px solid transparent;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-encrypt {
+    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+    color: white;
+    border-color: rgba(39, 174, 96, 0.5);
+}
+
+.btn-encrypt:hover {
+    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+    border-color: rgba(39, 174, 96, 0.8);
+    transform: translateY(-2px);
+}
+
+.btn-encrypt:active {
+    transform: translateY(0);
+}
+
+.btn-decrypt {
+    background: linear-gradient(135deg, #f39c12 0%, #d68910 100%);
+    color: white;
+    border-color: rgba(243, 156, 18, 0.5);
+}
+
+.btn-decrypt:hover {
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+    border-color: rgba(243, 156, 18, 0.8);
+    transform: translateY(-2px);
+}
+
+.btn-decrypt:active {
+    transform: translateY(0);
+}
+
+.btn-clear {
+    background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+    color: white;
+    border-color: rgba(160, 170, 170, 0.5);
+}
+
+.btn-clear:hover {
+    box-shadow: 0 8px 25px rgba(160, 170, 170, 0.4);
+    border-color: rgba(160, 170, 170, 0.8);
+    transform: translateY(-2px);
+}
+
+.btn-clear:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ============================================
+   Output Section
+   ============================================ */
+.output-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 500px) {
+    .output-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.output-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.output-box:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.output-box h3 {
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.output-content {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    color: white;
+    line-height: 1.6;
+}
+
+.output-content.placeholder {
+    color: #777;
+    font-style: italic;
+    justify-content: center;
+    text-align: center;
+}
+
+.output-content p {
+    margin: 0;
+    width: 100%;
+}
+
+/* ============================================
+   Responsive Design
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 500px) {
+    .card {
+        padding: 28px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .button-section {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
